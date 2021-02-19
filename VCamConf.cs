@@ -6,13 +6,14 @@ using Cinemachine;
 public class VCamConf : MonoBehaviour
 {
 
-    private CinemachineVirtualCamera vCam;
+    private CinemachineFreeLook vCam;
 
     // Start is called before the first frame update
     void Start()
     {
-        vCam = GetComponent<CinemachineVirtualCamera>();
-        vCam.m_Follow = Move.alvo.transform;
-        vCam.m_LookAt = Move.alvo.transform;
+        vCam = GetComponent<CinemachineFreeLook>();
+        vCam.m_Follow = PERSONAGEM.alvo.transform;
+        vCam.m_LookAt = PERSONAGEM.alvo.transform.GetChild(2);
+        //vCam.m_LookAt = Move.alvo.transform;
     }
 }
